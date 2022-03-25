@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <style>
+        .user-data {
+            background-color: rgb(212, 209, 209);
+            margin-top: 50px;
+            padding: 7px;
+            border-radius: 7px;
+        }
+        .payment {
+            background-color: rgb(152, 197, 152);
+            margin-top: 5px;
+            padding: 7px;
+            border-radius: 7px;
+            color: black;
+        }
+        .delivery {
+            background-color: rgb(190, 155, 146);
+            margin-top: 5px;
+            padding: 7px;
+            border-radius: 7px;
+            color: black;
+        }
+        .contact {
+            background-color: rgb(152, 192, 197);
+            margin-top: 5px;
+            padding: 7px;
+            border-radius: 7px;
+            color: black;
+            margin-bottom: 10px;
+        }
+        .footer-link a {
+        text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+    <p style="text-align: center; background-color: white;" class="fixed-top">
+        <a href="{% url 'home:home'%}" style="color: blue;font-size: x-large;font-weight: 600; text-decoration: none;">Return Home</a>
+    </p>
+    <div class="container user-data shadow p-3 mb-5 rounded">
+        <div style="text-shadow: -1px -1px 1px #000;width: 100%; background-color: rgb(232, 241, 241);text-align: center; color: black; font-size: x-large;font-weight: 600; margin: auto; padding: 7px; border-radius: 7px;">User Data</div>
+        <div style="text-align: center; color: crimson; font-size: larger; font-weight: 600; text-align: center; margin: auto;">Accounts</div>
+        <p>This site requires the users to have an account to have full access to our services.
+            Only username, first name, last name and email details are needed.These are for contacting you when necessary.</p>
+        <div style="text-align: center; color: crimson; font-size: larger; font-weight: 600; text-align: center; margin: auto;">Order Details</div>
+        <p>
+            These are details that will be used for delivery planning and making payments. These details are: 
+            <ol style="color: rgb(133, 6, 6);">
+                <li>Full name of the person the products will be delivered to.</li>
+                <li>Location of where the bought products will be delivered to.</li>
+                <li>Phone number. This is the phone number that will be used to make payments and to contact the buyer during the delivery process.</li>
+            </ol>
+            <span>Any order made  in one profile can have different order details</span>
+        </p>
+        <p>
+            These details can be updated but are only updated if the order has not been payed for. To update, go to <i>profile/orders</i>.
+        </p>
+    </div>
+    <div class="container payment shadow p-3 mb-5 rounded">
+        <div style="text-shadow: -1px -1px 1px #000;width: 100%; background-color: rgb(193, 235, 199);text-align: center; color: black; font-size: x-large;font-weight: 600; margin: auto; padding: 7px; border-radius: 7px;">Payments</div>
+        <div style="text-align: center; color: rgb(245, 8, 55); font-size: larger; font-weight: 600; text-align: center; margin: auto;">Making payment</div>
+        <p>
+            The payment method is Mpesa. You can pay for any order at any time.
+            The amount to pay is automatically sent to your Mpesa application and the phone number used is that which you provided for order details.
+            If the total amount to be paid is more than you Mpesa balance, Mpesa will inform you. <span style="text-decoration: underline red; font-weight: 500; color: rgb(110, 63, 5);">Only Mpesa knows your balance. We do not know.</span>
+            If this will be the case, you can top up and make the payment later. If not the case, you will be prompted to complete the transaction.
+        </p>
+        <div style="text-align: center; color: rgb(245, 8, 55); font-size: larger; font-weight: 600; text-align: center; margin: auto;">Initializing the process</div>
+        <p>
+            To make a payment, click the <span style="color: blue; font-size: larger; font-weight: 500;">Pending payment</span> link in the order you want to make payment for. You can pay for an order only once. 
+            After making the payment, confirm the payment and you will get the response.
+        </p>
+    </div>
+    <div class="container delivery shadow p-3 mb-5 rounded">
+        <div style="text-shadow: -1px -1px 1px #000;width: 100%; background-color: rgb(235, 193, 202);text-align: center; color: black; font-size: x-large;font-weight: 600; margin: auto; padding: 7px; border-radius: 7px;">Delivery</div>
+        <p>
+            Delivery will be only be done for payed orders. The delivery period will vary with the product you ordered (indicated in the product details).
+            If the given time is exceeded, contact us for more information.
+        </p>
+    </div>
+    <div class="container contact">
+        <div style="text-shadow: -1px -1px 1px #000;width: 100%; background-color: rgb(198, 228, 233);text-align: center; color: black; font-size: x-large;font-weight: 600; margin: auto; padding: 7px; border-radius: 7px;">Complains and Enquiry</div>
+        <p> For any complaint or enquiry, contact us <a href="{% url 'home:contact'%}"> here</a>. <i>TIP: Do not delete the pre-edited texts in email and whatsapp.</i> </p>
+    </div>
+    <footer class="text-center text-lg-start text-light" style="background-color: rgb(44, 43, 43);">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h6 class="text-uppercase">SHOP</h6>
+                <ul class="list-unstyled mb-0">
+                    <span class="footer-link">
+                        <a href="{% url 'shop:product_list'%}" class="text-light">Shop</a>
+                    </span>
+                </ul>
+            </div>
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h6 class="text-uppercase mb-0">Blog</h6>
+                <ul class="list-unstyled">
+                    <span class="footer-link">
+                        <a href="https://www.freenty.com" target="_blank" class="text-light">Blog</a>
+                    </span>
+                </ul>
+            </div>
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h6 class="text-uppercase">Guide</h6>
+                <ul class="list-unstyled mb-0">
+                    <span class="footer-link">
+                        <a href="{% url 'home:documentation'%}" class="text-light">Guide</a>
+                    </span>
+                </ul>
+            </div>
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h6 class="text-uppercase mb-0">Contacts</h6>
+                <ul class="list-unstyled">
+                    <span class="footer-link">
+                        <a href="{% url 'home:contact'%}" class="text-light">Contact</a>
+                    </span>
+                </ul>
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </div>
+        <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(233, 10, 10, 0.2);color: #ec7740;">
+        © 2021 Copyright:
+        <a style="color: chartreuse;" href="{% url 'home:home'%}">Handwork</a>
+    </div>
+        <!-- Copyright -->
+    </footer>
+</body>
+</html>

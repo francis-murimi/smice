@@ -1,0 +1,22 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+{% if category %}{{ category.title }}{% else %}Products{% endif %}
+{% endblock %}
+{% block content %}
+<div class="product-detail">
+    <h1 style="text-indent: 3%;">{{ product.name }} <span style="font-size: large;">Ksh{{ product.price }}</span></h1> 
+    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %} {% endif %}" style="max-width: 100%; border-radius: 5px;">
+    <div class="container" style="text-align: center;"><a href="{{ product.category.get_absolute_url }}" style="text-decoration: none;font-size: x-large;font-weight: 800;">{{ product.category }} Category</a></div>
+    <div class="container" style="font-weight: 600;">
+        {{ product.description|linebreaks }}
+    </div>
+</div>
+<div style="border: 1px black solid;background-color: whitesmoke; padding: 5px;border-radius: 5px;text-align: center;margin-bottom: 20px;">
+    <form action="{% url 'cart:cart_add' product.id %}" method="post">
+        {{ cart_product_form }}
+        {% csrf_token %}
+        <button type="submit" value="Add to cart" class="btn btn-primary">Add to Cart</button>
+    </form>
+</div>
+{% endblock %}

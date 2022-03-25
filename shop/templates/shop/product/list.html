@@ -1,0 +1,40 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+{% if category %}{{ category.name }} {% else %} Products {% endif %}
+{% endblock %}
+{% block content %}
+<br>
+<!-- Use any element to open the sidenav -->
+<span onclick="openNav()" style="background-color: cornflowerblue; border: 2px solid black; border-radius: 4px; padding: 5px; margin-top: 0px;"title="Choose category">Categories</span>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" >&times;</a>
+    <ul> 
+        <li {% if not category %}class="selected"{% endif %}>
+            <a href="{% url  'shop:product_list' %}">All</a>
+        </li>
+        {% for c in categories %}
+        <li {% if category.slug == c.slug %}class="selected"{% endif %}>
+            <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="container">
+    <div class="row">
+        <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
+        {% for product in products %}
+        <div class="col-md-4">
+            <div class="items" tabindex="-1">
+                <a href="{{ product.get_absolute_url }}">
+                    <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}" class="img-fluid" style="width: 100%; border-radius: 5px;"></a>
+                    <a href="{{ product.get_absolute_url }}" style="text-decoration: none;color: rgb(133, 74, 77);font-weight: 500;">{{ product.name }}</a><br>
+                    Ksh{{ product.price }}
+            </div>
+            
+        </div>
+        {% endfor %}
+    </div>
+</div>
+    
+{% endblock %}

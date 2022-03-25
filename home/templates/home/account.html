@@ -1,0 +1,50 @@
+{% extends "shop/base.html" %}
+{% block title %}
+Profile
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="container" style="margin-top: 5px;">
+        <div class="row">
+            <div class="col-sm">
+                <a href="{% url 'home:order_view' %}" style="text-decoration: none; ">
+                    <div style="width: 100%; height: fit-content; background-color: burlywood;padding: 7px;text-align: center; margin-top: 5px;border-top-left-radius: 10px; border-top-right-radius: 10px; color: blue; font-weight: 600; font-size: larger;">
+                        My Orders
+                    </div>
+                    <div style="padding: 5px;font-size: large; background-color: rgb(226, 208, 185); border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; color: rgb(27, 26, 26);">
+                        <p> View all orders made under this account.</p>
+                        <p> Change order information about this account.</p>
+                        <p> Compete payment of unpaid orders.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm">
+                <a href="{% url 'home:profile' %}" style="text-decoration: none; ">
+                    <div style="width: 100%; height: fit-content; background-color: burlywood;padding: 7px;text-align: center; margin-top: 5px;border-top-left-radius: 10px; border-top-right-radius: 10px; color: blue; font-weight: 600; font-size: larger;">
+                        Profile
+                    </div>
+                    <div style="padding: 5px;font-size: large; background-color: rgb(226, 208, 185); border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; color: rgb(27, 26, 26);">
+                        <p> View all orders made under this account.</p>
+                        <p> Change order information about this account.</p>
+                        <p> Compete payment of unpaid orders.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm">
+                <a href="{% url 'shop:product_list' %}" style="text-decoration: none; ">
+                    <div style="width: 100%; height: fit-content; background-color: burlywood;padding: 7px;text-align: center; margin-top: 5px;border-top-left-radius: 10px; border-top-right-radius: 10px; color: blue; font-weight: 600; font-size: larger;">
+                        Shop
+                    </div>
+                    <div style="padding: 5px;font-size: large; background-color: rgb(226, 208, 185); border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; color: rgb(27, 26, 26);">
+                        <p> View all orders made under this account.</p>
+                        <p> Change order information about this account.</p>
+                        <p> Compete payment of unpaid orders.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock%}

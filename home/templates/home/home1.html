@@ -1,0 +1,343 @@
+<!DOCTYPE html5>
+<html>
+    <head>
+        <title>HANDWORK</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <style>
+            html {scroll-behavior: smooth;}
+            ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: transparent;
+        }
+
+            li {
+                float: left;
+                width: 25%;
+                text-align: center;
+                font-size: large;
+                font-weight: 500;
+        }
+
+        li a, .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover, .dropd:hover .dropbtn {
+            background-color:rgb(240, 224, 240);
+        }
+
+        li.dropd {
+            display: inline-block;
+        }
+
+        .dropd-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropd-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropd-content a:hover {background-color: #f1f1f1;}
+
+        .dropd:hover .dropd-content {
+            display: block;
+        }
+        
+        .aaa { color: purple; font-family: "Great Vibes", cursive; font-size: 55px; font-weight: normal; margin-bottom: 0px; margin-top: 40px; text-align: center; text-shadow: 0 1px 1px #fff;padding-top: 15px;padding-bottom: 10px;width: 95%; }
+
+            .context {
+    width: 100%;
+    position: absolute;
+    top:50vh;
+}
+.aac{
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+}
+.area{
+    background: #4e54c8;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+    width: 100%;
+    height:100vh;
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+    .aad{
+        background: linear-gradient(-45deg, rgb(214, 11, 214), #4e54c8, #42f3be, #ec7740);
+	    background-size: 400% 400%;
+	    animation: gradient 15s ease infinite;
+    }
+    @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+    .footer-link a {
+        text-decoration: none;
+    }
+        </style>
+    </head>
+<body style=" background-color: rgb(211, 211, 243); ">
+    <div class="fixed-top">
+        <ul>
+            <li><a href="{% url 'home:home'%}"><span><img src="https://i.pinimg.com/564x/e8/3f/e2/e83fe2c4c0a70aef517e2cd691b9569b.jpg" alt="home" aria-hidden="true" style="width: 30px; border-radius: 5px;"> </span>Home</a></li>
+            <li><a href="{% url 'shop:product_list'%}"><span><img src="https://i.pinimg.com/564x/ab/ae/37/abae37377622c5cf5746a4d0f07f36c4.jpg" alt="shop" aria-hidden="true" style="width: 30px; border-radius: 5px;"> </span>Shop</a></li>
+            <li class="dropd">
+                <a href="javascript:void(0)" class="dropbtn"><span><img src="https://i.pinimg.com/564x/89/64/99/8964998576cfac440b3a14df748fc670.jpg" alt="accounts" aria-hidden="true" style="width: 30px; border-radius: 50%;"> </span>Accounts</a>
+                <div class="dropd-content" style="border-radius: 10px;">
+                    <a href="{% url 'home:log_in'%}">Log In</a>
+                    <a href="{% url 'home:register'%}">Register</a>
+                </div>
+            </li>
+            <li><a href="{% url 'home:account' %}"><span><img src="https://i.pinimg.com/564x/ca/53/60/ca536032f9b11d6fe728374dc49c9083.jpg" alt="profile" aria-hidden="true" style="width: 30px; border-radius: 50%;"> </span>Profile</a></li>
+        </ul>
+    </div>
+    <div class="aaa">
+        HANDWORK
+    </div>
+    <div class="container" style="color: maroon; text-align: center;">
+        {{ username }}
+    </div>
+    <div class="context">
+        <p class="aac">
+            From beginner to expert level of producers, small and big consumers,
+            HANDWORK provides us with a chance, an opportunity where growth is the only option.
+        </p>
+        <p class="aac">
+            We believe in Talent,Hard work and Quality. Join us, help us to grow and promote production within ourselves.
+        </p>
+    </div>
+    <div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div>
+    <div class="container-fluid aad">
+        <div style="text-align: center;color: rgb(240, 20, 20);font-weight: 500;font-size: large;text-decoration: underline rgb(70, 50, 184) 1px;">TOP PRODUCTS</div>
+        <div class="row">
+            {% for item in items %}
+            <div class="col-md-4">
+                <img src="{{item.picture.url}}" loading="lazy" alt="{{item.name}}" style="width: 100%; border-radius: 7px;">
+                <span style="font-weight: 500;">{{ item.name}}</span>
+                <span style="font-weight: 600;">Ksh {{item.price}}</span>
+            </div>
+            
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container-fluid" style="background-color: #4e54c8;">
+        <pre style="color: white; font-family: 'Great Vibes', cursive; font-size: 20px; font-weight: normal;background-color: transparent;text-align: center; padding-top: 7px;">
+            It was a thought
+            Then born was an Idea
+            Then created was Art 
+            Art became the product 
+            Product,Money,Value,Worth
+            Handwork,Build,Buy,Grow
+        </pre>
+    </div>
+    <footer class="text-center text-lg-start text-light" style="background-color: rgb(44, 43, 43);">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h6 class="text-uppercase">SHOP</h6>
+                <ul class="list-unstyled mb-0">
+                    <span class="footer-link">
+                        <a href="{% url 'shop:product_list'%}" class="text-light">Shop</a>
+                    </span>
+                </ul>
+            </div>
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h6 class="text-uppercase mb-0">Blog</h6>
+                <ul class="list-unstyled">
+                    <span class="footer-link">
+                        <a href="https://www.freenty.com" target="_blank" class="text-light">Blog</a>
+                    </span>
+                </ul>
+            </div>
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h6 class="text-uppercase">Guide</h6>
+                <ul class="list-unstyled mb-0">
+                    <span class="footer-link">
+                        <a href="{% url 'home:documentation'%}" class="text-light">Guide</a>
+                    </span>
+                </ul>
+            </div>
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h6 class="text-uppercase mb-0">Contacts</h6>
+                <ul class="list-unstyled">
+                    <span class="footer-link">
+                        <a href="{% url 'home:contact'%}" class="text-light">Contact</a>
+                    </span>
+                </ul>
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </div>
+        <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(233, 10, 10, 0.2);color: #ec7740;">
+        © 2021 Copyright:
+        <a style="color: chartreuse;" href="{% url 'home:home'%}">Handwork</a>
+    </div>
+        <!-- Copyright -->
+    </footer>
+</body>
+</html>

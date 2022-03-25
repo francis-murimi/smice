@@ -1,0 +1,43 @@
+{% extends "shop/base.html" %}
+{% block title %}
+My orders
+{% endblock %}
+{% block content %}
+
+<div class="container">
+    <script>
+        function deletePost() {
+            var ask = window.confirm("Are you sure you want to delete this order?");
+            if (ask) {
+                window.alert("This post was successfully deleted.");
+                window.location.href = "window-location.html";
+            }
+        }
+    </script>
+    <div class="row" style="margin-top: 5px; border-radius: 7px;">
+        <div class="col-6" style="text-align: center; background-color: transparent;border-right: 1px solid black;padding-bottom: 10px;">
+            <span style="color: orangered; font-size: larger; font-weight: 500;">Unpaid Orders</span>
+            <br>
+            {% for order in unpaid_orders %}
+            <div style="padding: 3px;background-color: transparent; margin-bottom: 4px; border-radius: 3px;">
+                <a href="{{ order.get_order_url }}" style="color: rgb(4, 4, 63); text-decoration: none; font-size: large; font-weight: 500;">Order number {{order.id }}</a>
+                <span><a href="{{ order.delete_order }}" style="padding-left: 15px;" onclick="return confirm('Do you want to delete this order?')"><button class="btn btn-danger">Delete</button></a></span>
+                <br>
+                <a href="{{ order.confirm_payment }}" style="color: rgb(7, 119, 50); text-decoration: none; font-size: large; font-weight: 500; padding-top: 1px;">Confirm Payment {{order.id}}</a>
+                <hr>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-6" style="text-align: center; background-color: transparent; padding-bottom: 10px;">
+            <span style="color: olivedrab; font-size: larger; font-weight: 500;">Paid Orders</span>
+            <br>
+            {% for order in paid_orders %}
+            <div style="padding: 3px;background-color: transparent; margin-bottom: 4px; border-radius: 3px;">
+                <a href="{{ order.get_order_url }}" style="color: rgb(4, 4, 63); text-decoration: none; font-size: large; font-weight: 500;">Order number {{order.id }}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

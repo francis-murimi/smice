@@ -1,0 +1,92 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Update Profile</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        
+        <div class="container">
+            <form method="post" novalidate enctype="multipart/form-data" action=".">
+                {% csrf_token %}
+                {% for hidden_field in u_form.hidden_fields %}
+                {{ hidden_field }}
+                {% endfor %}
+                {% if form.non_field_errors %}
+                <div class="alert alert-danger" role="alert">
+                    {% for error in u_form.non_field_errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            
+                {% for field in u_form.visible_fields %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {% if form.is_bound %}
+                    {% if field.errors %}
+                        {% render_field field class="form-control is-invalid" %}
+                        {% for error in field.errors %}
+                        <div class="invalid-feedback">
+                            {{ error }}
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        {% render_field field class="form-control is-valid" %}
+                    {% endif %}
+                    {% else %}
+                    {% render_field field class="form-control" %}
+                    {% endif %}
+                    {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                {% csrf_token %}
+                {% for hidden_field in p_form.hidden_fields %}
+                {{ hidden_field }}
+                {% endfor %}
+                {% if form.non_field_errors %}
+                <div class="alert alert-danger" role="alert">
+                    {% for error in p_form.non_field_errors %}
+                    {{ error }}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            
+                {% for field in p_form.visible_fields %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {% if form.is_bound %}
+                    {% if field.errors %}
+                        {% render_field field class="form-control is-invalid" %}
+                        {% for error in field.errors %}
+                        <div class="invalid-feedback">
+                            {{ error }}
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        {% render_field field class="form-control is-valid" %}
+                    {% endif %}
+                    {% else %}
+                    {% render_field field class="form-control" %}
+                    {% endif %}
+                    {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <button type="submit" class="btn btn-primary" style="margin-top: 15px;">Update</button>
+            </form>
+        </div>
+        
+        
+    </body>
+</html>  

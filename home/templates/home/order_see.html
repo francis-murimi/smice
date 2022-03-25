@@ -1,0 +1,77 @@
+{% extends "shop/base.html" %}
+{% block title %}
+Order details
+{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <h1> Details for Order {{ order.id }}</h1>
+    <ul class="object-tools">
+        <li>
+            <a href="#" onclick="window.print();" style="text-decoration: none; font-weight: 400;">Print order</a>
+        </li>
+    </ul>
+    <table class="table table-striped">
+        <tr>
+            <th>Created</th>
+            <td>{{ order.created }}</td>
+        </tr>
+        <tr>
+            <th>Customer</th>
+            <td>{{ order.first_name }} {{ order.last_name }}</td>
+        </tr>
+        <tr>
+            <th>E-mail</th>
+            <td>{{ order.email }}</td>
+        </tr>
+        <tr>
+            <th>Phone Number</th>
+            <td>{{ order.phone_number }}</td>
+        </tr>
+        <tr>
+            <th>Delivery</th>
+            <td>{{ order.delivery_point }},{{ order.area }} </td>
+        </tr>
+        <tr>
+            <th>Total amount</th>
+            <td>Ksh {{ order.get_total_cost }}</td>
+        </tr>
+        <tr class="table-warning">
+            <th>Status</th>
+            <td>{% if order.paid %}Paid{% else %}
+                <a href="{{ order.get_order_detail }}" style="text-decoration: none; color: blue; font-weight: 500; font-size: larger;">Pending payment</a>{% endif %}
+            </td>
+        </tr>
+    </table>
+    {% if order.paid %}Order Paid{% else %}
+    <a href="{{ order.get_order_update }}">Update Order Details</a>
+    {% endif %}
+    
+        
+                <table class="table table-striped">
+                    <h2>Items bought</h2>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in order.items.all %}
+                        <tr class="row{% cycle '1' '2' %}">
+                            <td>{{ item.product.name }}</td>
+                            <td class="num">Ksh {{ item.price }}</td>
+                            <td class="num">{{ item.quantity }}</td>
+                            <td class="num">Ksh {{ item.get_cost }}</td>
+                        </tr>
+                    {% endfor %}
+                        <tr class="table-warning">
+                            <td colspan="3">Total</td>
+                            <td class="num">Ksh {{ order.get_total_cost }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+</div>
+{% endblock %}

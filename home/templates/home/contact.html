@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <style>
+        .producers {
+            background-color: rgb(228, 217, 204);
+            color: black;
+            border-radius: 7px;
+            border: 1px black solid;
+        }
+        .buyers {
+            background-color: rgb(215, 194, 228);
+            color: black;
+            border-radius: 7px;
+            border: 1px black solid;
+        }
+        .footer-link a {
+        text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+    <p style="text-align: center; background-color: white;" class="fixed-top">
+        <a href="{% url 'home:home'%}" style="color: blue;font-size: x-large;font-weight: 600; text-decoration: none;">Return Home</a>
+    </p>
+    <div class="container shadow p-3 mb-5 rounded" style="margin-top: 45px; text-align: center;color: #f14646; font-family: 'Great Vibes', cursive; font-size: larger;">For efficiency, do not delete the pre-edited text.</div>
+    <div class="container producers shadow p-3 mb-5 rounded">
+        <div style="text-shadow: -1px -1px 1px #000;width: 100%; background-color: rgb(232, 241, 241);text-align: center; color: black; font-size: x-large;font-weight: 600; margin: auto; padding: 7px; border-radius: 7px;">Producers</div>
+        <p>
+            Do you create, make or produce beadworks, knits or any other artistic products? 
+            If yes, contact us through any of the following channels.
+        </p>
+        <div class="links">
+            <div style="background-color: rgb(174, 224, 177); width: 70%; margin-left: 10%; padding: 10px; border-radius: 7px;"><a href="https://wa.me/254762245736?text=I'm%20intrested%20in%20selling%20with%20your%20site" target="_blank" style="text-decoration: none; font-weight: 500;"><span><img src="https://image.flaticon.com/icons/png/512/124/124034.png" style="width: 30px; border-radius: 5px;"></span>&nbsp&nbspWhatsapp</a></div>
+            <div style="background-color: rgb(247, 150, 150); width: 70%; margin-left: 10%; padding: 10px; border-radius: 7px; margin-top: 5px;"><a href="mailto:freenty001@gmail.com?&subject=Selling%20Products%20With%20your%20Site&body=I'm%20interested%20in%20to%20selling%20my%20products" target="_blank" style="text-decoration: none; font-weight: 500;"><span><img src="https://www.flaticon.com/svg/vstatic/svg/732/732200.svg?token=exp=1614147634~hmac=344edcc3fcb6068b6b1d5c90617033e4" style="width: 30px; border-radius: 5px;"></span>&nbsp&nbspEmail</a></div>
+            <div style="background-color: rgb(175, 174, 224); width: 70%; margin-left: 10%; padding: 10px; border-radius: 7px; margin-top: 5px;"><a href="tel:+254743597479" style="text-decoration: none; font-weight: 500;"><span><img src="https://png.pngtree.com/png-clipart/20200225/original/pngtree-phone-icon-isolated-on-abstract-background-png-image_5261328.jpg" style="width: 30px; border-radius: 5px;"></span>&nbsp&nbspCall</a></div>
+        </div>
+    </div>
+    <div class="container buyers shadow p-3 mb-5 rounded">
+        <div style="text-shadow: -1px -1px 1px #000;width: 100%; background-color: rgb(232, 241, 241);text-align: center; color: black; font-size: x-large;font-weight: 600; margin: auto; padding: 7px; border-radius: 7px;">Customers</div>
+        <p>
+            If you have any query regarding your account, orders or payments, use these contact channels.
+        </p>
+        <div class="links">
+            <div style="background-color: rgb(174, 224, 177); width: 70%; margin-left: 10%; padding: 10px; border-radius: 7px;"><a href="https://wa.me/254762245736?text=I'm%20a%20very%20important%20part%20of%20your%20site" target="_blank" style="text-decoration: none; font-weight: 500;"><span><img src="https://image.flaticon.com/icons/png/512/124/124034.png" style="width: 30px; border-radius: 5px;"></span>&nbsp&nbspWhatsapp</a></div>
+            <div style="background-color: rgb(247, 150, 150); width: 70%; margin-left: 10%; padding: 10px; border-radius: 7px; margin-top: 5px;"><a href="mailto:freenty001@gmail.com?&subject=I%20Am%20A%20Customer&body=I%20have%20an%20issue%20with%20my" target="_blank" style="text-decoration: none; font-weight: 500;"><span><img src="https://www.flaticon.com/svg/vstatic/svg/732/732200.svg?token=exp=1614147634~hmac=344edcc3fcb6068b6b1d5c90617033e4" style="width: 30px; border-radius: 5px;"></span>&nbsp&nbspEmail</a></div>
+            <div style="background-color: rgb(175, 174, 224); width: 70%; margin-left: 10%; padding: 10px; border-radius: 7px; margin-top: 5px;"><a href="tel:+254743597479" style="text-decoration: none; font-weight: 500;"><span><img src="https://png.pngtree.com/png-clipart/20200225/original/pngtree-phone-icon-isolated-on-abstract-background-png-image_5261328.jpg" style="width: 30px; border-radius: 5px;"></span>&nbsp&nbspCall</a></div>
+        </div>
+    </div>
+    <footer class="text-center text-lg-start text-light" style="background-color: rgb(44, 43, 43);">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row">
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h6 class="text-uppercase">SHOP</h6>
+                <ul class="list-unstyled mb-0">
+                    <span class="footer-link">
+                        <a href="{% url 'shop:product_list'%}" class="text-light">Shop</a>
+                    </span>
+                </ul>
+            </div>
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h6 class="text-uppercase mb-0">Blog</h6>
+                <ul class="list-unstyled">
+                    <span class="footer-link">
+                        <a href="https://www.freenty.com" target="_blank" class="text-light">Blog</a>
+                    </span>
+                </ul>
+            </div>
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h6 class="text-uppercase">Guide</h6>
+                <ul class="list-unstyled mb-0">
+                    <span class="footer-link">
+                        <a href="{% url 'home:documentation'%}" class="text-light">Guide</a>
+                    </span>
+                </ul>
+            </div>
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h6 class="text-uppercase mb-0">Contacts</h6>
+                <ul class="list-unstyled">
+                    <span class="footer-link">
+                        <a href="{% url 'home:contact'%}" class="text-light">Contact</a>
+                    </span>
+                </ul>
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </div>
+        <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(233, 10, 10, 0.2);color: #ec7740;">
+        © 2021 Copyright:
+        <a style="color: chartreuse;" href="{% url 'home:home'%}">Handwork</a>
+    </div>
+        <!-- Copyright -->
+    </footer>
+</body>
+</html>
