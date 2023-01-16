@@ -12,8 +12,8 @@ from django.template import loader
 from django.views.decorators.http import require_http_methods
 
 def getAccessToken(request):
-    consumer_key = 'her3AGkiH3KiaQPBf7lbJJJXiqDGhG4h'
-    consumer_secret = 'ANcRGmZw9D969MpP'
+    consumer_key = 'her3AGkiHxxxxxxxxxxxxx'
+    consumer_secret = 'ANcRGmZxxxxxxxxxxx'
     api_URL = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
     r = requests.get(api_URL, auth=HTTPBasicAuth(consumer_key, consumer_secret))
     mpesa_access_token = json.loads(r.text)
